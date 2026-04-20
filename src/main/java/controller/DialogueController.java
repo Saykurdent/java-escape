@@ -40,7 +40,6 @@ public class DialogueController {
         characterImage.setImage(
                 new Image(getClass().getResource("/images/policier.png").toExternalForm())
         );
-
         Platform.runLater(() -> rootPane.requestFocus());
         afficherDialogue();
     }
@@ -49,7 +48,6 @@ public class DialogueController {
         this.mode = mode;
         updateDialogues();
         index = 0;
-
         if (dialogueLabel != null) {
             afficherDialogue();
         }
@@ -77,13 +75,10 @@ public class DialogueController {
         if (timeline != null) {
             timeline.stop();
         }
-
         dialogueLabel.setText("");
         charIndex = 0;
         texteFini = false;
-
         String texte = dialogues[index];
-
         timeline = new Timeline(new KeyFrame(Duration.millis(30), e -> {
             if (charIndex < texte.length()) {
                 dialogueLabel.setText(dialogueLabel.getText() + texte.charAt(charIndex));
@@ -127,7 +122,6 @@ public class DialogueController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/quiz.fxml"));
             Scene scene = new Scene(loader.load(), 800, 600);
-
             Stage stage = (Stage) rootPane.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
