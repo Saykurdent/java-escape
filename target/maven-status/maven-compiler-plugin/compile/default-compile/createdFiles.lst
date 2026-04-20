@@ -1,2 +1,6 @@
+controller/DialogueController.class
+controller/QuizController.class
+model/QuizQuestion.class
 application/Main.class
+service/QuizService.class
 controller/MenuController.class
