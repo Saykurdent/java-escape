@@ -87,7 +87,6 @@ public class DialogueController {
                 texteFini = true;
             }
         }));
-
         timeline.setCycleCount(texte.length() + 1);
         timeline.play();
     }
