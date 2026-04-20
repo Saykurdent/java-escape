@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane fx:id="rootPane"
@@ -14,11 +15,17 @@
             stylesheets="@../style.css">
 
     <children>
+        <ImageView fx:id="characterImage"
+                   fitHeight="300"
+                   fitWidth="250"
+                   layoutX="50"
+                   layoutY="200" />
+
         <Label fx:id="dialogueLabel"
-               layoutX="50.0"
-               layoutY="380.0"
-               prefWidth="700.0"
-               prefHeight="140.0"
+               layoutX="320"
+               layoutY="380"
+               prefWidth="430"
+               prefHeight="140"
                wrapText="true"
                style="-fx-font-size: 18px;" />
     </children>

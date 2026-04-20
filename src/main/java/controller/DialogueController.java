@@ -4,12 +4,14 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -20,6 +22,9 @@ public class DialogueController {
 
     @FXML
     private Label dialogueLabel;
+
+    @FXML
+    private ImageView characterImage;
 
     private String mode = "INTRO";
     private String[] dialogues;
@@ -32,6 +37,10 @@ public class DialogueController {
     @FXML
     public void initialize() {
         updateDialogues();
+        characterImage.setImage(
+                new Image(getClass().getResource("/images/policier.png").toExternalForm())
+        );
+
         Platform.runLater(() -> rootPane.requestFocus());
         afficherDialogue();
     }
@@ -118,6 +127,7 @@ public class DialogueController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/quiz.fxml"));
             Scene scene = new Scene(loader.load(), 800, 600);
+
             Stage stage = (Stage) rootPane.getScene().getWindow();
             stage.setScene(scene);
             stage.show();
